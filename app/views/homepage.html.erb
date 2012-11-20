@@ -1,1 +1,8 @@
-没错，这儿是首页
+<ul class="unstyled">
+    <% @girls.each do |girl| %>
+    <li>
+      <p><a href="<%= girl_url(girl) %>"><img src="<%= girl.head_pic %>" /></a></p>
+      <div><%= girl.name_cn %></div>
+    </li>
+    <% end %>
+</ul>

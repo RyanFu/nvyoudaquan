@@ -3,7 +3,8 @@ Nvyoudaquan::Application.routes.draw do
   match 'login' => 'users#login'
   get 'logout' => 'users#destroy'
   get 'signup' => 'users#new'
-  resource :users
+  resources :girls
+  resources :users
   get 'admin' => 'application#admin'
   namespace :admin do |admin|
     resources :girls

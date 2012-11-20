@@ -1,9 +1,9 @@
 <div class="header">
   <div class="container">
     <h1 class="pull-left"><a href="<%= root_url %>">女优大全</a><small>我们的精神家园</small></h1>
-    <ul class="top-nav-options pull-right unstyled">
+    <ul class="top-nav-options horizontal pull-right unstyled">
       <% if current_user %>
-          <li>欢迎：<a href="<%= users_url(current_user) %>"><i class="icon-user"></i><%= current_user.nickname %></a></li>
+          <li>欢迎：<a href="<%= user_url(current_user) %>"><i class="icon-user"></i><%= current_user.nickname %></a></li>
           <li><a href="<%= logout_url %>"><i class="icon-off"></i>退出</a></li>
           <% if ['admin'].include?(current_user.role) %>
               <li><a href="<%= admin_url %>"><i class="icon-briefcase"></i>管理</a></li>
@@ -16,5 +16,12 @@
           </li>
       <% end %>
     </ul>
+    <div class="clearfix"></div>
+    <div class="clearfix">
+      <a href="<%= root_url %>">首页</a>
+      <a href="<%= girls_url %>">女优</a>
+      <a href="#">探秘</a>
+      <a href="#">福利</a>
+    </div>
   </div>
 </div>

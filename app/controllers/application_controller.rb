@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin
-    redirect_to admin_books_url
+    redirect_to admin_girls_url
   end
 
   # 登录验证

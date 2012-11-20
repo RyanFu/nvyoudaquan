@@ -1,0 +1,61 @@
+<%= form_for [:admin, @girl], :html => { :class => 'form-horizontal' } do |f| %>
+    <%= f.hidden_field :id %>
+    <div class="control-group">
+        <%= f.label :name, '女优姓名', :class => "control-label" %>
+        <div class="controls"><%= f.text_field :name %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :name_cn, '中译名', :class => "control-label" %>
+      <div class="controls"><%= f.text_field :name_cn %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :name_en, '英译名', :class => "control-label" %>
+      <div class="controls"><%= f.text_field :name_en %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :birthday, '生日', :class => "control-label" %>
+      <div class="controls"><%= f.text_field :birthday %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :debut, '出道时间', :class => "control-label" %>
+      <div class="controls"><%= f.text_field :debut %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :retired, '退役时间', :class => "control-label" %>
+      <div class="controls"><%= f.text_field :retired %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :height, '身高', :class => "control-label" %>
+      <div class="controls"><%= f.text_field :height %> cm</div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :birthday, '三围', :class => "control-label" %>
+      <div class="controls">
+        胸：<%= f.text_field :bust, :class=>'input-mini' %>
+        腰：<%= f.text_field :waist, :class=>'input-mini' %>
+        臀：<%= f.text_field :hip, :class=>'input-mini' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :head_pic, '头像', :class => "control-label" %>
+      <div class="controls"><%= f.text_field :head_pic %> cm</div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :introduce, '女优简介', :class => "control-label" %>
+      <div class="controls"><%= f.text_area :introduce, "rows" => 4, 'class' => 'span5' %></div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit '提交', :class => 'btn btn-primary' %>
+      <a href="<%= admin_girls_url %>"><i class="icon-share-alt"></i>返回女优管理</a>
+    </div>
+<% end %>

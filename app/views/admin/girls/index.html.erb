@@ -1,0 +1,36 @@
+<div class="mb10">
+  <a class="btn" href="<%= url_for(:controller => 'admin/girls', :action => 'new') %>"><i class="icon-plus-sign"></i> 添加女优</a>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>女优姓名</th>
+    <th>中译名</th>
+    <th>英译名</th>
+    <th>添加时间</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @girls.each do |girl| %>
+  <tr>
+    <td><%= girl.id %></td>
+    <td><%= girl.name %></td>
+    <td><%= girl.name_cn %></td>
+    <td><%= girl.name_en %></td>
+    <td><%= girl.created_at.to_date %></td>
+    <td>
+      <a href="<%= edit_polymorphic_url([:admin, girl]) %>"><i class="icon-edit"></i>编辑</a>
+      |
+      <%= link_to content_tag(:i, '', 'class'=>'icon-remove-sign')+"删除", admin_girl_path(girl), :confirm => "确定删除?", :method=>:delete %>
+      |
+      <a href="<%= admin_works_url(:girl_id => girl.id) %>"><i class="icon-th"></i>作品</a>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @girls %>

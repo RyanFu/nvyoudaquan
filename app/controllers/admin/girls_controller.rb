@@ -1,8 +1,8 @@
 #coding=utf-8
 class Admin::GirlsController < ApplicationController
-  #before_filter do |controller|
-  #  controller.authenticated({:role => 'admin', :alert=>'不具备的权限'})
-  #end
+  before_filter do |controller|
+    controller.authenticated({:role => 'admin', :alert=>'不具备的权限'})
+  end
   layout 'admin'
   def index
     @girls = Girl.order(:id).page(params[:page])

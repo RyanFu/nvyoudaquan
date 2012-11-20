@@ -1,5 +1,5 @@
 class GirlsController < ApplicationController
   def show
-    @girl = Girl.find(params[:id])
+    @girl = Girl.includes(:works).find(params[:id])
   end
 end

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>女优大全</title>
+  <title><%= yield(:title).empty? ? '女优大全' : yield(:title)%></title>
+  <meta name="keywords" content="<%= yield(:keywords) %>">
+  <meta name="description" content="<%= yield(:description) %>">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= yield(:stylesheet) %>
   <%= javascript_include_tag "application" %>

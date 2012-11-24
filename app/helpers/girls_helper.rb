@@ -10,14 +10,14 @@ module GirlsHelper
     keywords
   end
   def keywords_girl(girl)
+    return '' if girl.name_cn.blank?
     keywords = girl.name_cn
     keywords += '，' + girl.name_cn + '电影'
+    keywords += '，' + girl.name
     keywords += '，' + girl.name_cn + '的电影'
     keywords += '，' + girl.name_cn + '全集'
     keywords += '，' + girl.name_cn + '的全集'
     keywords += '，' + girl.name_cn + '图片'
-    keywords += '，' + girl.name
-    keywords += '，' +  girl.name_en
     return keywords
   end
 end

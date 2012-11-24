@@ -1,8 +1,9 @@
 <ul class="unstyled">
     <% @girls.each do |girl| %>
     <li>
-      <p><a href="<%= girl_url(girl) %>"><img src="<%= girl.head_pic %>" /></a></p>
-      <div><%= girl.name_cn %></div>
+      <div><a href="<%= girl_url(girl) %>"><%= girl.name_cn %></a></div>
     </li>
     <% end %>
 </ul>
+
+<%= paginate @girls %>

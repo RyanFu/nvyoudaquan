@@ -2,7 +2,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   def homepage
-    @girls = Girl.limit(10).all
+    @girls = Girl.order("id desc").page(params[:page])
     render :template => 'homepage'
   end
 

@@ -2,19 +2,27 @@
 <% provide(:keywords, keywords_girl(@girl)) %>
 <% provide(:description, @girl.name_cn + '的详细资料，关于'+@girl.name_cn+'的一切，更多女优，和大家交流，找到精神寄托尽在女优大全！') %>
 <div class="clearfix">
+  <% unless @girl.head_pic %>
   <div class="pull-left">
     <img src="<%= @girl.head_pic %>" alt="<%= @girl.name_cn %>的图片" />
   </div>
+  <% end %>
   <div>
     <p><%= @girl.name_cn %><small><%= @girl.name %></small></p>
-    <div>生日：<span><%= @girl.birthday.to_date %></span></div>
+    <div>生日：<span><%= @girl.birthday %></span></div>
     <div>出道：<span><%= @girl.debut %></span></div>
+    <div>地点：<span><%= @girl.place %></span></div>
+    <div>身高：<span><%= @girl.height %>cm</span></div>
+    <div>体重：<span><%= @girl.weight %>kg</span></div>
+    <div>血型：<span><%= @girl.blood_type %></span></div>
     <div>
       三围：
       <span title="胸围"><%= @girl.bust %></span> -
       <span title="腰围"><%= @girl.waist %></span> -
       <span title="臀围"><%= @girl.hip %></span>
     </div>
+    <div>罩杯：<span><%= @girl.cup %></span></div>
+    <div>简介：<%= @girl.introduce.html_safe %></div>
   </div>
 </div>
 
@@ -30,7 +38,7 @@
 </div>
 
 <div>
-  <p><%= @girl.name_cn %>的写真集<small>亲，撸起来！</small></p>
+  <p><%= @girl.name_cn %>的写真集<small>骚年不哭，站起来撸！</small></p>
   <% unless @girl.works.blank? %>
       <ul>
         <% @girl.works.each do |work| %>
